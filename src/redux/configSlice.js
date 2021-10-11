@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  apiHost: 'http://localhost',
+  apiHost: 'http://ptani.test',
+  sidebarShow: true,
+  sidebarUnfoldable: false,
 }
 
 export const configSlice = createSlice({
@@ -11,8 +13,14 @@ export const configSlice = createSlice({
     setApiHost: (state, action) => {
       state.apiHost = action.payload
     },
+    setSidebarShow: (state, action) => {
+      state.sidebarShow = action.payload
+    },
+    setSidebarUnfoldable: (state, action) => {
+      state.sidebarUnfoldable = action.payload
+    },
   },
 })
 
-export const { setApiHost } = configSlice.actions
+export const { setApiHost, setSidebarShow, setSidebarUnfoldable } = configSlice.actions
 export default configSlice.reducer
